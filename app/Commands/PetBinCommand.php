@@ -37,16 +37,16 @@ class PetBinCommand extends Command
     public function handle()
     {
         $filter = $this->argument('filter');
+        // Laravel Zero doesn't have the validator class so... Cheese it.
         if (!in_array($filter, $this->validFilters)) {
             $this->error('Invalid filter. Valid filters are: ' . join(', ', $this->validFilters));
 
             return 1;
         }
 
-        $filterClass = new \StdClass();
-        if ($filter == 'frequency') {
+        if ($filter === 'frequency') {
             $filterClass = new EqualFrequencyFilter();
-        } elseif ($filter == 'width') {
+        } elseif ($filter === 'width') {
             $filterClass = new EqualWidthFilter();
         } else {
             $this->error('There is no way this could have happened but we\'ll check anyway. Please contact support.');
@@ -56,10 +56,8 @@ class PetBinCommand extends Command
 
         $service = new BinningService();
         $res = $service->runBin($filterClass);
-        dd($res);
 
-        $this->line($filter);
-
+        $this->line(json_encode($res));
     }
 
     /**
