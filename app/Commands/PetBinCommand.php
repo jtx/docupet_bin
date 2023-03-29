@@ -22,7 +22,7 @@ class PetBinCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Run the test binning utility';
 
     /**
      * @var array|string[]
@@ -43,8 +43,19 @@ class PetBinCommand extends Command
             return 1;
         }
 
+        $filterClass = new \StdClass();
+        if ($filter == 'frequency') {
+            $filterClass = new EqualFrequencyFilter();
+        } elseif ($filter == 'width') {
+            $filterClass = new EqualWidthFilter();
+        } else {
+            $this->error('There is no way this could have happened but we\'ll check anyway. Please contact support.');
+
+            return 1;
+        }
+
         $service = new BinningService();
-        $res = $service->runBin(new EqualWidthFilter());
+        $res = $service->runBin($filterClass);
         dd($res);
 
         $this->line($filter);
