@@ -19,9 +19,9 @@ class BinningService
     const BIN_COUNT = 3;
 
     /**
-     * @param array|null $dataSet
+     * @param array $dataSet
      */
-    public function __construct(?array $dataSet = [])
+    public function __construct(array $dataSet = [])
     {
         if (!empty($dataSet)) {
             $this->dataSet = $dataSet;
