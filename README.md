@@ -6,7 +6,11 @@
 
 ## How to run this:
 
-### First... Start the container
+### Very first....
+  - Make sure Docker is installed on your local machine.
+  - Clone this repo. I'm hoping you know how to do that.
+
+### Start the container
   - docker run -d docupet_bin
 
 ### Once it's up and running, you can run this from terminal:
