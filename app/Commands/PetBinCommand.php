@@ -15,7 +15,7 @@ class PetBinCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pet-bin {filter}';
+    protected $signature = 'pet-bin {filter?}';
 
     /**
      * The description of the command.
@@ -58,16 +58,5 @@ class PetBinCommand extends Command
         $res = $service->runBin($filterClass);
 
         $this->line(json_encode($res));
-    }
-
-    /**
-     * Define the command's schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
-     */
-    public function schedule(Schedule $schedule): void
-    {
-        // $schedule->command(static::class)->everyMinute();
     }
 }
