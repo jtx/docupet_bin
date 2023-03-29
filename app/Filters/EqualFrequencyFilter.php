@@ -13,8 +13,6 @@ class EqualFrequencyFilter implements FilterInterface
      */
     public function filter(array $dataSet, int $binCount): array
     {
-        sort($dataSet);
-
         $countSet = count($dataSet);
         $binSize = floor($countSet / $binCount);
         $remainder = $countSet % $binCount;

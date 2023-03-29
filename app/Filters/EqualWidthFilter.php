@@ -13,8 +13,6 @@ class EqualWidthFilter implements FilterInterface
      */
     public function filter(array $dataSet, int $binCount): array
     {
-        sort($dataSet);
-
         $min = min($dataSet);
         $max = max($dataSet);
         $width = ($max - $min) / $binCount;
