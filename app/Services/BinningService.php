@@ -21,7 +21,7 @@ class BinningService
     /**
      * @param array|null $dataSet
      */
-    public function __construct(?array $dataSet = null)
+    public function __construct(?array $dataSet = [])
     {
         if (!empty($dataSet)) {
             $this->dataSet = $dataSet;
