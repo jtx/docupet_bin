@@ -9,7 +9,7 @@ class BinningService
     /**
      * @var array|float[]
      */
-    protected array $dataSet = [0.1, 3.4, 3.5, 3.6, 7.0, 9.0, 6.0, 4.4, 2.5, 3.9, 4.5, 2.8, 10, 20];
+    protected array $dataSet = [0.1, 3.4, 3.5, 3.6, 7.0, 9.0, 6.0, 4.4, 2.5, 3.9, 4.5, 2.8];
 
     const BIN_COUNT = 3;
 
