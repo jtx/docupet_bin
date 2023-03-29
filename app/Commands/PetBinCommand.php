@@ -14,7 +14,7 @@ class PetBinCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pet-bin {filter?}';
+    protected $signature = 'pet-bin {filter?} {--ds=*}';
 
     /**
      * The description of the command.
@@ -53,7 +53,11 @@ class PetBinCommand extends Command
             return 1;
         }
 
-        $service = new BinningService();
+        // Command line dataset input options, takes an array via passing the option over and over ie --ds=1 --ds=25 --ds=100
+        $dataSet = $this->option('ds');
+        $dataSet = array_filter($dataSet, 'is_numeric');
+
+        $service = new BinningService($dataSet);
         $res = $service->runBin($filterClass);
 
         $this->line(json_encode($res));
