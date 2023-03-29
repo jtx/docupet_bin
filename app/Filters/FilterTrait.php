@@ -5,7 +5,8 @@ namespace App\Filters;
 trait FilterTrait
 {
     /**
-     * This kinda assumes you're only using 3 bins, but for the sake of this test I'm not wanting to overthink it
+     * We're assuming there are 3 bins for this code test.
+     *
      * @var array|string[]
      */
     protected array $labels = [

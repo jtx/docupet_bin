@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class BinningServiceTest extends TestCase
 {
-    // Here's the math for ya
+    // Here's the math
     // (40 - 1) / 3 = 13
     // 0-13, 14-27, 28-41
 
@@ -73,12 +73,6 @@ class BinningServiceTest extends TestCase
         ];
 
         $this->assertEquals($expected, $res);
-    }
-
-    public function testEqualWidthRandom()
-    {
-        // I'd test random numbers here but we got a 2 hour time limit.  If you want me to do it, I can
-        $this->assertTrue(true);
     }
 
     public function testEqualFrequencyDefaultDataset()
