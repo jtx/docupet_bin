@@ -30,7 +30,6 @@ class EqualWidthFilter implements FilterInterface
             for ($i = 0; $i < $binCount; $i++) {
                 if ($value >= $boundaries[$i] && $value <= $boundaries[$i + 1]) {
                     $bins[$this->labels[$i]][] = $value;
-                    break;
                 }
             }
         }
