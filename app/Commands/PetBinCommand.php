@@ -5,7 +5,6 @@ namespace App\Commands;
 use App\Filters\EqualFrequencyFilter;
 use App\Filters\EqualWidthFilter;
 use App\Services\BinningService;
-use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
 
 class PetBinCommand extends Command
