@@ -1,4 +1,4 @@
-# A Code Challenge that Docupet.com had me perform for free labor.
+# A Code Challenge (free labor).
 
 
 - Unit Tests are located in the  /tests directory. Run phpunit from the base dir
