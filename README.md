@@ -1,4 +1,4 @@
-# A Code Challenge (free labor).
+# A Code Challenge.
 
 
 - Unit Tests are located in the  /tests directory. Run phpunit from the base dir
